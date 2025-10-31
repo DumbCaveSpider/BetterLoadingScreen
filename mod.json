@@ -12,12 +12,17 @@
 	"developer": "ArcticWoof",
 	"description": "Makes the Loading Screen better",
 	"tags": ["universal"],
+	"links": {
+		"source": "https://github.com/DumbCaveSpider/BetterLoadingScreen",
+		"homepage": "https://arcticwoof.com.au/",
+		"community": "https://discord.gg/gXcppxTNxC"
+	},
 	"settings": {
 		"loadingString": {
 			"name": "Loading Text",
 			"description": "Set any text on the loading label",
 			"type": "string",
-			"default": "Loading to somewhere..."
+			"default": "Loading Level..."
 		}
 	},
 	"resources": {
