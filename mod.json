@@ -20,7 +20,7 @@
 	"settings": {
 		"loadingString": {
 			"name": "Loading Text",
-			"description": "Set any text on the loading label",
+			"description": "Set any text on the loading text label",
 			"type": "string",
 			"default": "Loading Level...",
 			"enable-if": "!customEditorLoading"
@@ -32,13 +32,13 @@
 			"default": false
 		},
 		"customEditorLoading": {
-			"name": "Custom Editor Loading Text",
+			"name": "Enable Editor Loading Text",
 			"description": "Enable custom loading text when entering or exiting the editor. <cy>This will disable the default loading text.</cy>",
 			"type": "bool",
 			"default": false
 		},
 		"title1": {
-			"name": "Exiting Editor Options",
+			"name": "Editor Text Options",
 			"type": "title"
 		},
 		"exitingEditorString": {
@@ -47,10 +47,6 @@
 			"type": "string",
 			"default": "Exiting Editor...",
 			"enable-if": "customEditorLoading"
-		},
-		"title2": {
-			"name": "Entering Editor Options",
-			"type": "title"
 		},
 		"enterEditorString": {
 			"name": "Entering Editor Loading Text",

@@ -30,7 +30,7 @@ class $modify(GJGameLoadingLayer)
                     {
                         spinner->setVisible(false);
                         auto fishSpinner = CCSprite::create("fish.webp"_spr);
-                        fishSpinner->setScale(1.2f);
+                        fishSpinner->setScale(1.4f);
                         fishSpinner->setPosition({winSize.width - 30, 30});
                         layer->addChild(fishSpinner, 100);
                     }
