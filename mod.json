@@ -1,0 +1,26 @@
+{
+	"geode": "4.9.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "arcticwoof.better_loading_screen",
+	"name": "Better Loading Screen",
+	"version": "v1.0.0",
+	"developer": "ArcticWoof",
+	"description": "Makes the Loading Screen better",
+	"tags": ["universal"],
+	"settings": {
+		"loadingString": {
+			"name": "Loading Text",
+			"description": "Set any text on the loading label",
+			"type": "string",
+			"default": "Loading to somewhere..."
+		}
+	},
+	"resources": {
+		"sprites": ["resources/*"]
+	}
+}
