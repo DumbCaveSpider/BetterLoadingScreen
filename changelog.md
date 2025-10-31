@@ -2,6 +2,7 @@
 
 - fish spinner available at the mod settings :fire:
 - Added custom entering and exiting editor loading texts
+- Added a scalable loading text setting
 
 # v1.0.0
 

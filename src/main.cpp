@@ -4,6 +4,7 @@
 
 using namespace geode::prelude;
 
+// to the index staff: finally you decided to review this tiny mod that you could approve in like 10 seconds like what ages, jeez
 class $modify(GJGameLoadingLayer)
 {
     static GJGameLoadingLayer *transitionToLoadingLayer(GJGameLevel *level, bool editor)
@@ -13,7 +14,8 @@ class $modify(GJGameLoadingLayer)
 
         if (layer)
         {
-            log::debug("editor: {}", editor);
+            log::debug("loading editor: {}", editor);
+            float textScale = Mod::get()->getSettingValue<float>("loadingScale");
             for (int i = 0; i < layer->getChildrenCount(); i++)
             {
                 // i mean i could just getChildByID(0) and do it that way but im smorty
@@ -22,6 +24,7 @@ class $modify(GJGameLoadingLayer)
                     auto winSize = CCDirector::sharedDirector()->getWinSize();
                     label->setPosition(label->getPositionX() - 40, label->getPositionY());
                     label->setString(loadingString.c_str());
+                    label->setScale(textScale);
                     auto spinner = LoadingSpinner::create(30.f);
                     spinner->setPosition(winSize.width - 30, 30);
                     layer->addChild(spinner);
@@ -49,7 +52,6 @@ class $modify(GJGameLoadingLayer)
                             label->setString(exitingString.c_str());
                         }
                     }
-
                     break;
                 }
             }
