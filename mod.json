@@ -8,7 +8,7 @@
 	},
 	"id": "arcticwoof.better_loading_screen",
 	"name": "Better Loading Screen",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "ArcticWoof",
 	"description": "Makes the Loading Screen better",
 	"tags": ["universal"],
@@ -23,9 +23,23 @@
 			"description": "Set any text on the loading label",
 			"type": "string",
 			"default": "Loading Level..."
+		},
+		"fishSpinner": {
+			"name": "Fish Spinner",
+			"description": "Replace the default spinner with a fish spinner",
+			"type": "bool",
+			"default": false
 		}
 	},
 	"resources": {
-		"sprites": ["resources/*"]
+		"files": [
+			"resources/*"
+		]
+	},
+	"dependencies": {
+		"prevter.imageplus": {
+			"importance": "required",
+			"version": ">=1.0.0"
+		}
 	}
 }

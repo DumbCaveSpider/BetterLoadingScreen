@@ -13,6 +13,7 @@ class $modify(GJGameLoadingLayer)
 
         if (layer)
         {
+            log::debug("editor: {}", editor);
             for (int i = 0; i < layer->getChildrenCount(); i++)
             {
                 // i mean i could just getChildByID(0) and do it that way but im smorty
@@ -25,16 +26,14 @@ class $modify(GJGameLoadingLayer)
                     spinner->setPosition(winSize.width - 30, 30);
                     layer->addChild(spinner);
 
-                    // TODO: idk how to load the fish.webp directly from resources lmao
-                    // something with the webp format i think, can anyone help pls :sob:
-                    // yes ill add imageplus for it
-                    // if (Mod::get()->getSettingValue<bool>("fishSpinner"))
-                    // {
-                    //     spinner->setVisible(false);
-                    //     auto fishSpinner = CCSprite::create("fish.webp"_spr);
-                    //     fishSpinner->setPosition({0, 0});
-                    //     spinner->addChild(fishSpinner);
-                    // }
+                    if (Mod::get()->getSettingValue<bool>("fishSpinner"))
+                    {
+                        spinner->setVisible(false);
+                        auto fishSpinner = CCSprite::create("fish.webp"_spr);
+                        fishSpinner->setScale(1.2f);
+                        fishSpinner->setPosition({winSize.width - 30, 30});
+                        layer->addChild(fishSpinner, 100);
+                    }
                     break;
                 }
             }
