@@ -34,6 +34,22 @@ class $modify(GJGameLoadingLayer)
                         fishSpinner->setPosition({winSize.width - 30, 30});
                         layer->addChild(fishSpinner, 100);
                     }
+
+                    // time to do the options thingy
+                    if (Mod::get()->getSettingValue<bool>("customEditorLoading"))
+                    {
+                        if (editor)
+                        {
+                            auto enterString = Mod::get()->getSettingValue<std::string>("enterEditorString");
+                            label->setString(enterString.c_str());
+                        }
+                        else if (!editor)
+                        {
+                            auto exitingString = Mod::get()->getSettingValue<std::string>("exitingEditorString");
+                            label->setString(exitingString.c_str());
+                        }
+                    }
+
                     break;
                 }
             }

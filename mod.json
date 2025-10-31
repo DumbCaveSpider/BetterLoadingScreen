@@ -22,13 +22,42 @@
 			"name": "Loading Text",
 			"description": "Set any text on the loading label",
 			"type": "string",
-			"default": "Loading Level..."
+			"default": "Loading Level...",
+			"enable-if": "!customEditorLoading"
 		},
 		"fishSpinner": {
 			"name": "Fish Spinner",
 			"description": "Replace the default spinner with a fish spinner",
 			"type": "bool",
 			"default": false
+		},
+		"customEditorLoading": {
+			"name": "Custom Editor Loading Text",
+			"description": "Enable custom loading text when entering or exiting the editor. <cy>This will disable the default loading text.</cy>",
+			"type": "bool",
+			"default": false
+		},
+		"title1": {
+			"name": "Exiting Editor Options",
+			"type": "title"
+		},
+		"exitingEditorString": {
+			"name": "Exiting Editor Loading Text",
+			"description": "Set any text on the loading label when exiting the editor",
+			"type": "string",
+			"default": "Exiting Editor...",
+			"enable-if": "customEditorLoading"
+		},
+		"title2": {
+			"name": "Entering Editor Options",
+			"type": "title"
+		},
+		"enterEditorString": {
+			"name": "Entering Editor Loading Text",
+			"description": "Set any text on the loading label when entering the editor",
+			"type": "string",
+			"default": "Entering Editor...",
+			"enable-if": "customEditorLoading"
 		}
 	},
 	"resources": {
