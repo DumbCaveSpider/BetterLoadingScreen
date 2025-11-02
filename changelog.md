@@ -1,3 +1,7 @@
+# v1.0.2
+
+- Internal changes espeically better detection on the loading text label
+
 # v1.0.1
 
 - fish spinner available at the mod settings :fire:

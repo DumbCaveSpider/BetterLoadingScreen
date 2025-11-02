@@ -16,43 +16,39 @@ class $modify(GJGameLoadingLayer)
         {
             log::debug("loading editor: {}", editor);
             float textScale = Mod::get()->getSettingValue<float>("loadingScale");
-            for (int i = 0; i < layer->getChildrenCount(); i++)
+            // i mean i could just getChildByID(0) and do it that way but im smorty
+            if (auto label = layer->getChildByType<CCLabelBMFont>(0))
             {
-                // i mean i could just getChildByID(0) and do it that way but im smorty
-                if (auto label = static_cast<CCLabelBMFont *>(layer->getChildren()->objectAtIndex(i)))
+                auto winSize = CCDirector::sharedDirector()->getWinSize();
+                label->setPosition(label->getPositionX() - 40, label->getPositionY());
+                label->setString(loadingString.c_str());
+                label->setScale(textScale);
+                auto spinner = LoadingSpinner::create(30.f);
+                spinner->setPosition(winSize.width - 30, 30);
+                layer->addChild(spinner);
+
+                if (Mod::get()->getSettingValue<bool>("fishSpinner"))
                 {
-                    auto winSize = CCDirector::sharedDirector()->getWinSize();
-                    label->setPosition(label->getPositionX() - 40, label->getPositionY());
-                    label->setString(loadingString.c_str());
-                    label->setScale(textScale);
-                    auto spinner = LoadingSpinner::create(30.f);
-                    spinner->setPosition(winSize.width - 30, 30);
-                    layer->addChild(spinner);
+                    spinner->setVisible(false);
+                    auto fishSpinner = CCSprite::create("fish.webp"_spr);
+                    fishSpinner->setScale(1.4f);
+                    fishSpinner->setPosition({winSize.width - 30, 30});
+                    layer->addChild(fishSpinner, 100);
+                }
 
-                    if (Mod::get()->getSettingValue<bool>("fishSpinner"))
+                // time to do the options thingy
+                if (Mod::get()->getSettingValue<bool>("customEditorLoading"))
+                {
+                    if (editor)
                     {
-                        spinner->setVisible(false);
-                        auto fishSpinner = CCSprite::create("fish.webp"_spr);
-                        fishSpinner->setScale(1.4f);
-                        fishSpinner->setPosition({winSize.width - 30, 30});
-                        layer->addChild(fishSpinner, 100);
+                        auto enterString = Mod::get()->getSettingValue<std::string>("enterEditorString");
+                        label->setString(enterString.c_str());
                     }
-
-                    // time to do the options thingy
-                    if (Mod::get()->getSettingValue<bool>("customEditorLoading"))
+                    else if (!editor)
                     {
-                        if (editor)
-                        {
-                            auto enterString = Mod::get()->getSettingValue<std::string>("enterEditorString");
-                            label->setString(enterString.c_str());
-                        }
-                        else if (!editor)
-                        {
-                            auto exitingString = Mod::get()->getSettingValue<std::string>("exitingEditorString");
-                            label->setString(exitingString.c_str());
-                        }
+                        auto exitingString = Mod::get()->getSettingValue<std::string>("exitingEditorString");
+                        label->setString(exitingString.c_str());
                     }
-                    break;
                 }
             }
         }
