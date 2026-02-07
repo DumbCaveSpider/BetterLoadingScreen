@@ -1,8 +1,11 @@
 # Better Loading Screen
 
-A <cl>lightweight mod</c> that makes the loading screen <co>*(The screen that transitions from/to the editor mode)*</co> better with a Loading Spinner and a customizable loading text message.
+**Makes the Loading Screen better!**
 
-<cy>You can change the look of your loading screen at the Mod settings.</cy>
+---
+### About
+A <cl>lightweight mod</c> that makes the loading screen <co>_(The screen that transitions from/to the editor mode)_</co> better with a Loading Spinner and a customizable loading text message.
 
-![king](arcticwoof.twitch_interactive/king.png)
-![fish](arcticwoof.better_loading_screen/fish.webp)
+<cy>![⚙️](frame:geode.loader/settings.png?scale=0.45) You can change the look of your loading screen in the mod settings!</cy>
+
+![King Clawthorne](arcticwoof.rated_layouts/king.png)

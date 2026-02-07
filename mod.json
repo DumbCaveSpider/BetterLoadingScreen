@@ -1,14 +1,14 @@
 {
-	"geode": "4.9.0",
+	"geode": "5.0.0-alpha.1",
 	"gd": {
-		"win": "2.2074",
-		"android": "2.2074",
-		"mac": "2.2074",
-		"ios": "2.2074"
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
 	},
 	"id": "arcticwoof.better_loading_screen",
 	"name": "Better Loading Screen",
-	"version": "v1.0.2",
+	"version": "v1.0.3",
 	"developer": "ArcticWoof",
 	"description": "Makes the Loading Screen better",
 	"tags": ["universal"],
@@ -71,7 +71,7 @@
 	},
 	"dependencies": {
 		"prevter.imageplus": {
-			"importance": "required",
+			"importance": "recommended",
 			"version": ">=1.0.0"
 		}
 	}
