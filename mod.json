@@ -1,5 +1,5 @@
 {
-	"geode": "5.0.0-alpha.1",
+	"geode": "5.0.0-beta.2",
 	"gd": {
 		"win": "2.2081",
 		"android": "2.2081",
@@ -29,7 +29,7 @@
 			"name": "Loading Text Scale",
 			"description": "Set the scale of the loading text label",
 			"type": "float",
-			"default": 1.0,
+			"default": 0.5,
 			"min": 0.1,
 			"max": 5.0
 		},
@@ -40,7 +40,7 @@
 			"default": false
 		},
 		"customEditorLoading": {
-			"name": "Enable Editor Loading Text",
+			"name": "Editor Loading Text",
 			"description": "Enable custom loading text when entering or exiting the editor. <cy>This will disable the default loading text.</cy>",
 			"type": "bool",
 			"default": false
@@ -50,14 +50,14 @@
 			"type": "title"
 		},
 		"exitingEditorString": {
-			"name": "Exiting Editor Loading Text",
+			"name": "Exiting Text",
 			"description": "Set any text on the loading label when exiting the editor",
 			"type": "string",
 			"default": "Exiting Editor...",
 			"enable-if": "customEditorLoading"
 		},
 		"enterEditorString": {
-			"name": "Entering Editor Loading Text",
+			"name": "Entering Text",
 			"description": "Set any text on the loading label when entering the editor",
 			"type": "string",
 			"default": "Entering Editor...",
@@ -70,9 +70,6 @@
 		]
 	},
 	"dependencies": {
-		"prevter.imageplus": {
-			"importance": "recommended",
-			"version": ">=1.0.0"
-		}
+		"prevter.imageplus": ">=1.0.0"
 	}
 }
